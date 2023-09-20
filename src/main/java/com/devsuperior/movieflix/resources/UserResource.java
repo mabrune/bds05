@@ -10,13 +10,13 @@ import com.devsuperior.movieflix.dto.UserDTO;
 import com.devsuperior.movieflix.services.UserService;
 
 @RestController
-@RequestMapping(value = "/users/profile")
+@RequestMapping(value = "/users")
 public class UserResource {
 	
 	@Autowired
 	private UserService service;
 	
-	@GetMapping
+	@GetMapping(value = "/profile")
 	public ResponseEntity<UserDTO> findUserLogged() {
 		UserDTO dto = service.findUserLogged();
 		return ResponseEntity.ok().body(dto);
